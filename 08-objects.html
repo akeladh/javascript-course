@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+      const product = {
+        name: 'socks',
+        price: 1090
+      };
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product.name);
+
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+
+      console.log(typeof product);
+      */
+
+      /* ----
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        //nested object
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1(){
+          console.log('function inside object')
+        }
+      };
+      console.log(product2);
+      //dot notation
+      console.log(product2.name);
+      //bracket notation - pro is that if property doesn't exist it won't give error but instead undefined
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+
+      console.log(product2.rating.count);
+      product2.fun();
+      
+      
+      //function inside an object -- method
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+     ------*/
+      //Built in objects-- some include:  console, Math, JSON, localStorage
+
+      /*JSON - Javascript Object Notion - syntax similar to JS object but with less features
+          -JSON doesn't support single quotes or functions
+          -JSON is more universal and can be understood by most programming languages
+        JSON object helps convert JS object to JSON
+      */
+     /*------
+      console.log(JSON.stringify(product2));
+      console.log(typeof JSON.stringify(product2));
+      -------*/
+      //converting from JSON --> JS
+      /*------
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      -------*/
+
+
+    /*localStorage - saves values more permanently bc 
+        -variables are temp and
+        -if we refresh/close the page, all the variables are deleted
+      *localStorage only supports strings
+    */
+
+    //null = intentionally want something to be empty 
+    //undefined = something is empty and will use a default value
+
+
+    /*Autoboxing -- automatically wraps 'hello' into a special object
+      -works with other types of values: numbers, booleans
+      -doesn't work with null and undefined -- give us an error
+      -objects are references
+    */
+   
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      message: 'hello'
+    };
+    //this doesn't copy the object but points to the reference of object1 in memory 
+    //***
+    const object2 = object1; 
+    //const prevents us from changing the refernce in the variable but doesn't prevent us from reaching into the reference and changing the object it's pointing to
+    object1.message = 'Good job!';
+    console.log(object1);
+    console.log(object2);
+    //can't compare objects directly so if we compare 2 objects with the same content
+    const object3 = {
+      message: 'Good job!'
+    };
+    console.log(object3 === object1); //false bc they have difference references and doesn't check the values into the objects
+    console.log(object2 ===object1);//true because they have the same reference as stated at ***
+
+
+    //Shortcuts of objects
+    const object4 = {
+      message: 'Good job!',
+      price: 799
+    };
+    //const message = object4.message;
+    //destructuring shortcut -- get the message property out of object 4 and saves it into variable called message
+    const {message} = object4;
+    console.log(message);
+
+    const{price} = object4;
+    console.log(price);
+    
+    
+    const object5 = {
+      //Shorthand property shortcut
+      //takes whatever is inside message variable and substitues it into the code
+      //long way of doing it--> message: message ,, another way V 
+      message,
+      //Shorthand method shortcut
+      /* long way of doing it --> 
+      method: function function1(){
+        console.log('method');
+      },
+      other way V */
+      method(){
+        console.log('method');
+      }
+    };
+    console.log(object5);
+    object5.method();
+    </script>
+  </body>
+</html>
