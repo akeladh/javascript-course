@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <button>hello</button>
+    <button class="js-button">second button</button>
+      
+    <script>
+      //DOM -> built in object --> called document object
+      //combines JS and HTML together
+      /*
+      document.body.innerHTML = "byebye";
+      document.title = 'good job';
+      */
+
+      //gets the title html element and puts it into javascript
+      //console.log(document.title);
+      //document.title = 'Changed';
+
+      //get the body html element and put it into javascript
+      //console.log(document.body);
+      //console.log(typeof document.body);
+
+      //gets the body html element and replace it as a button
+      //console.log(document.body.innerHTML);
+      //document.body.innerHTML = '<button> Good job! </button>';
+
+      //.querySelector -- this method lets us get any element from the page and put it into js
+      //get the first button and puts it into js
+      //'any element goes here'
+      //every html element has property innerHTML -- which controls the html inside the element
+      //gives us the html inside the button
+      console.log(document.querySelector('button').innerHTML);
+      //how to change the html inside 
+      document.querySelector('button').innerHTML = 'changed';
+      //since query selector just get the first element so this is how we would get the other buttons on the page 
+      //class selector
+      console.log(document.querySelector('.js-button').innerHTML);
+      document.querySelector('.js-button').innerHTML = 'changed too';
+      const buttonElem = document.querySelector('.js-button');
+      console.log(buttonElem);
+      
+    </script>
+  </body>
+</html>
